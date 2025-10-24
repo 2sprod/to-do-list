@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>To-Do List</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app" id="todoApp">
+    <header>
+      <div>
+        <h1>To-Do List</h1>
+        <p>Add tasks with categories, due dates, and sort them easily.</p>
+      </div>
+
+      <div class="controls">
+        <div class="filters">
+          <button class="filter-btn" data-filter="all" aria-pressed="true">All</button>
+          <button class="filter-btn" data-filter="active" aria-pressed="false">Active</button>
+          <button class="filter-btn" data-filter="completed" aria-pressed="false">Completed</button>
+        </div>
+        <button id="clear-completed" class="filter-btn">Clear completed</button>
+        <select id="sort-select" class="filter-btn">
+          <option value="newest">Sort: Newest</option>
+          <option value="oldest">Sort: Oldest</option>
+          <option value="date">Sort: Due Date</option>
+        </select>
+        <!-- 🌗 Added Dark/Light toggle -->
+        <button id="theme-toggle" class="filter-btn">🌙 Dark</button>
+      </div>
+    </header>
+
+    <form class="add" id="add-form">
+      <div class="input-wrap">
+        <input id="new-task" type="text" placeholder="Task description..." required />
+      </div>
+      <select id="category">
+        <option value="General">General</option>
+        <option value="School">School</option>
+        <option value="Work">Work</option>
+        <option value="Personal">Personal</option>
+      </select>
+      <input id="due-date" type="date" />
+      <button class="btn" type="submit">Add</button>
+    </form>
+
+    <section>
+      <div id="list" class="list"></div>
+      <div class="empty" id="empty-state" hidden>No tasks yet — add your first one!</div>
+    </section>
+
+    <footer class="footer">
+      <div id="count">0 tasks</div>
+      <small>Tip: Add a due date or category. Double-click to edit. Drag to reorder.</small>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
